@@ -1,0 +1,30 @@
+name: Send Daily Love Mail 💖
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 6:30 AM IST
+  workflow_dispatch:
+
+jobs:
+  send-mail:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run mail script
+        run: node cron.js
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
