@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "email-generator",
   "version": "1.0.0",
   "main": "cron.js",
   "type": "module",
@@ -9,7 +9,7 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "node-cron": "^4.2.1",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^8.0.8"
+    "nodemailer": "^8.0.8",
+    "node-fetch": "^3.3.2"
   }
 }
