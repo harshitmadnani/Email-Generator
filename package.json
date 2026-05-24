@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "cron.js",
+  "type": "module",
+  "scripts": {
+    "start": "node cron.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.8"
+  }
+}
