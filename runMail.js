@@ -3,6 +3,6 @@ dotenv.config();
 
 import { sendMail } from "./mailer.js";
 
-console.log("💌 Running mail job...");
+console.log("🚀 Running scheduled mail job...");
 
-sendMail();
+await sendMail();
