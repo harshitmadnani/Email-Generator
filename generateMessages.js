@@ -1,75 +1,93 @@
 const fs = require("fs");
 
 const openers = [
-  "Good morning my love ❤️",
-  "Hey beautiful 😘",
-  "Good morning jaan ☀️",
-  "Wake up sleepyhead 😄",
-  "Good morning meri jaan 💕"
+  "Good morning meri pyaari ❤️",
+  "Good morning beautiful ☀️",
+  "Hello sleepyhead 😄",
+  "Uth jao princess 👑",
+  "Morning jaan 💕",
+  "Good morning cutie 😘",
+  "Oye sunshine 🌸"
 ];
 
-const feelings = [
-  "I miss you a little extra today",
-  "I can’t stop thinking about you",
-  "You’re the best thing in my life",
-  "You make everything feel better",
-  "I still get butterflies because of you",
-  "I just want to hug you tight",
-  "You’re always on my mind"
+const cuteLines = [
+  "You look cutest in the morning honestly",
+  "I still smile seeing your sleepy face",
+  "Your hugs are my favorite thing ever",
+  "Life feels peaceful with you",
+  "I love our little moments together",
+  "You make home feel special",
+  "You’re literally my comfort person",
+  "Even normal days feel better with you",
+  "I love annoying you all day 😄",
+  "You’re my daily dose of happiness",
+  "I could spend all day just talking to you",
+  "I love waking up knowing you’re mine"
 ];
 
-const flirty = [
-  "I would have definitely stolen a kiss if you were here 😏",
-  "You’re dangerously cute, you know that?",
-  "I think I’m addicted to you 😄",
-  "Not fair how attractive you are even in my thoughts",
-  "I need my morning hug from you soon 🥺"
+const flirtyLines = [
+  "You owe me a morning hug 😏",
+  "You’re too cute to handle honestly",
+  "Still not over how pretty you are",
+  "I need extra cuddles today 🥺",
+  "You look dangerous when you smile 😘",
+  "I swear you get prettier every day",
+  "Your smile fixes my mood instantly",
+  "I’m definitely stealing kisses later 😄"
 ];
 
-const deep = [
-  "I feel really lucky to have you in my life",
-  "You’ve changed my life in ways you don’t even realize",
-  "You are my peace and my happiness",
-  "Loving you is the easiest thing I’ve ever done"
+const caringLines = [
+  "Eat properly today okay ❤️",
+  "Don’t stress too much today jaan",
+  "Take care of yourself for me 💕",
+  "Hope your day goes super smoothly",
+  "Remember to smile today ☀️",
+  "I know you’ll do amazing today",
+  "Stay happy and hydrated 😄"
 ];
 
 const endings = [
-  "Have an amazing day ahead 💖",
-  "Go win your day princess 👑",
-  "Don’t forget I love you ❤️",
-  "Come back soon, I miss you already 🥺",
-  "Sending you a tight hug 😘"
+  "Love youuuu ❤️",
+  "Now go and shine ✨",
+  "Have the cutest day 😘",
+  "See you soon cutie 💕",
+  "Can’t wait to annoy you again 😄",
+  "Big hug for you 🥺",
+  "Forever grateful for you ❤️"
 ];
 
-const emojis = ["❤️", "💕", "😘", "🥺", "💖", "😏", "🌸", "💘"];
+const emojis = ["❤️", "💕", "😘", "🥺", "😄", "✨", "🌸", "☀️"];
 
 const messages = [];
 
 for (let i = 0; i < 500; i++) {
-  const type = Math.random();
-
   const opener = openers[Math.floor(Math.random() * openers.length)];
-  const feel = feelings[Math.floor(Math.random() * feelings.length)];
-  const flirt = flirty[Math.floor(Math.random() * flirty.length)];
-  const deepLine = deep[Math.floor(Math.random() * deep.length)];
-  const end = endings[Math.floor(Math.random() * endings.length)];
+  const cute = cuteLines[Math.floor(Math.random() * cuteLines.length)];
+  const flirt = flirtyLines[Math.floor(Math.random() * flirtyLines.length)];
+  const care = caringLines[Math.floor(Math.random() * caringLines.length)];
+  const ending = endings[Math.floor(Math.random() * endings.length)];
   const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+  const type = Math.random();
 
   let msg = "";
 
-  // 💡 Random structures (THIS is key)
-  if (type < 0.3) {
-    msg = `${opener} ${emoji}\n\n${feel}. ${end}`;
-  } else if (type < 0.6) {
-    msg = `${opener} ${emoji}\n\n${feel}... ${flirt}. ${end}`;
-  } else if (type < 0.8) {
-    msg = `${opener} ${emoji}\n\n${deepLine}. ${feel}. ${end}`;
-  } else {
-    msg = `${opener} ${emoji}\n\n${flirt}. ${deepLine}. ${end}`;
+  if (type < 0.25) {
+    msg = `${opener} ${emoji}\n\n${cute}. ${ending}`;
+  } 
+  else if (type < 0.5) {
+    msg = `${opener} ${emoji}\n\n${cute}. ${care}. ${ending}`;
+  } 
+  else if (type < 0.75) {
+    msg = `${opener} ${emoji}\n\n${flirt}. ${cute}. ${ending}`;
+  } 
+  else {
+    msg = `${opener} ${emoji}\n\n${care}. ${flirt}. ${ending}`;
   }
 
   messages.push(msg);
 }
 
 fs.writeFileSync("messages.json", JSON.stringify(messages, null, 2));
-console.log("🔥 500 REALISTIC romantic messages generated!");
+
+console.log("✅ 500 cute realistic romantic messages generated!");

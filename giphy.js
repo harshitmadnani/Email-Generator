@@ -6,10 +6,7 @@ export const getRomanticGif = async () => {
       "cute love",
       "cute couple",
       "kawaii love",
-      "adorable love",
-      "cute hug",
-      "love cartoon",
-      "cute hearts"
+      "cute"
     ];
 
     const randomQuery = queries[Math.floor(Math.random() * queries.length)];
